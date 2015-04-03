@@ -1,0 +1,23 @@
+header
+  nav.navbar.navbar-default role="navigation" 
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        = link_to "Job Hunt", :new_user_session, :class => "navbar-brand"
+      #navbar.navbar-collapse.collapse
+        ul.nav.navbar-nav.navbar-left
+          - if user_signed_in?
+            li= link_to "My Profile", linkedin_linkedin_profile_path
+            li= link_to "My Jobs", jobsearch_jobs_path
+            
+        ul.nav.navbar-nav.navbar-right
+          - if user_signed_in?
+            li.navbar-text
+              | Weclome #{current_user.name}
+            li= link_to "Sign out", destroy_user_session_path, :method => :delete
+          - else
+            li= link_to "Sign in Linkedin", user_omniauth_authorize_path(:linkedin)

@@ -1,0 +1,41 @@
+// Place all the styles related to the jobsearch controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.fav_job{
+  border: solid 1px #ccc;
+  background-color: #f9f9f9;
+  text-align: justify;
+  margin : 10px;
+  padding : 5px;
+}
+
+.applyh1{
+  background-color:#A0A0A0;
+}
+
+.star {
+  background-color: transparent;
+  background-image: url('star-off.png');
+  background-repeat:no-repeat;
+  display: block;  
+  height:16px;
+  width:16px;
+  float:left;
+}
+
+.favorited {
+  text-indent: -5000px;
+  background-color: transparent;
+  background-image: url('star-on.png');
+  background-repeat:no-repeat;   
+  height:16px;
+  width:16px;
+  float:left;
+}
+
+a:hover{
+    color: red;
+    text-decoration: underline;
+    
+}

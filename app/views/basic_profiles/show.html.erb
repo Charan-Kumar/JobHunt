@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @basic_profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @basic_profile.last_name %>
+</p>
+
+<p>
+  <strong>Maiden name:</strong>
+  <%= @basic_profile.maiden_name %>
+</p>
+
+<p>
+  <strong>Formatted name:</strong>
+  <%= @basic_profile.formatted_name %>
+</p>
+
+<p>
+  <strong>Headline:</strong>
+  <%= @basic_profile.headline %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @basic_profile.location %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @basic_profile.industry %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @basic_profile.summary %>
+</p>
+
+<p>
+  <strong>Specialties:</strong>
+  <%= @basic_profile.specialties %>
+</p>
+
+<p>
+  <strong>Picture url:</strong>
+  <%= @basic_profile.picture_url %>
+</p>
+
+<p>
+  <strong>Public profile url:</strong>
+  <%= @basic_profile.public_profile_url %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @basic_profile.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_basic_profile_path(@basic_profile) %> |
+<%= link_to 'Back', basic_profiles_path %>

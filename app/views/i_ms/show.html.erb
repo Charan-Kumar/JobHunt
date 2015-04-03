@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Im-account-type:</strong>
+  <%= @im.im-account-type %>
+</p>
+
+<p>
+  <strong>Im-account-name:</strong>
+  <%= @im.im-account-name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @im.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_im_path(@im) %> |
+<%= link_to 'Back', ims_path %>

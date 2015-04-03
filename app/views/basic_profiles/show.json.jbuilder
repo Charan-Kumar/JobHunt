@@ -1,0 +1,1 @@
+json.extract! @basic_profile, :id, :first_name, :last_name, :maiden_name, :formatted_name, :headline, :location, :industry, :summary, :specialties, :picture_url, :public_profile_url, :user_id, :created_at, :updated_at

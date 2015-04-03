@@ -1,0 +1,28 @@
+<% @jobs.each do |job|%>
+  <% flag = 1%>
+  <% id = 0%>
+  <% @fav.each do |f|%>
+    <% if f.job_key == job.job_key %>
+      <% flag=0%>
+      <% id=f.id%>
+      <% break%>
+    <% end %>
+  <%end%>
+  <%if flag==1%>
+    <div class="fav_job">
+      <p  id=<%= job.job_key%> is_fav="false" class = "star" user="<%= current_user.id %>" 
+      db_id="<%= id %>" ></p>
+      <p><b><%= link_to job.job_title, job.url%></b></p>
+      <p><%= job.company%>, <%= job.formatted_location%></p>
+      <p><%= job.snippet%></p>
+    </div>
+  <%else%>
+    <div class="fav_job">
+      <p  id=<%= job.job_key%> is_fav="true" class = "star favorited" db_id="<%= id %>"
+      user="<%= current_user.id %>"></p>
+      <p><b><%= link_to job.job_title, job.url%></b></p>
+      <p><%= job.company%>, <%= job.formatted_location%></p>
+      <p><%= job.snippet%></p>
+    </div>
+  <%end%>
+<% end %>

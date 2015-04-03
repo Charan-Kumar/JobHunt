@@ -1,0 +1,2 @@
+module BasicProfilesHelper
+end

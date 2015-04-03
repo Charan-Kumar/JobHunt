@@ -1,0 +1,29 @@
+<h1>Listing fav_jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Job key</th>
+      <th>Is fav</th>
+      <th>Boolean</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fav_jobs.each do |fav_job| %>
+      <tr>
+        <td><%= fav_job.job_key %></td>
+        <td><%= fav_job.is_fav %></td>
+        <td><%= fav_job.boolean %></td>
+        <td><%= link_to 'Show', fav_job %></td>
+        <td><%= link_to 'Edit', edit_fav_job_path(fav_job) %></td>
+        <td><%= link_to 'Destroy', fav_job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fav job', new_fav_job_path %>

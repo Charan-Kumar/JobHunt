@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Associations:</strong>
+  <%= @full_profile.associations %>
+</p>
+
+<p>
+  <strong>Honors:</strong>
+  <%= @full_profile.honors %>
+</p>
+
+<p>
+  <strong>Interests:</strong>
+  <%= @full_profile.interests %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @full_profile.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_full_profile_path(@full_profile) %> |
+<%= link_to 'Back', full_profiles_path %>

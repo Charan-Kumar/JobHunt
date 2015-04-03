@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_key: MyString
+  is_fav: MyString
+  boolean: MyString
+
+two:
+  job_key: MyString
+  is_fav: MyString
+  boolean: MyString

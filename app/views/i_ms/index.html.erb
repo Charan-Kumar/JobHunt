@@ -1,0 +1,29 @@
+<h1>Listing ims</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Im-account-type</th>
+      <th>Im-account-name</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ims.each do |im| %>
+      <tr>
+        <td><%= im.im-account-type %></td>
+        <td><%= im.im-account-name %></td>
+        <td><%= im.user_id %></td>
+        <td><%= link_to 'Show', im %></td>
+        <td><%= link_to 'Edit', edit_im_path(im) %></td>
+        <td><%= link_to 'Destroy', im, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Im', new_im_path %>

@@ -1,0 +1,3 @@
+class PhoneNo < ActiveRecord::Base
+  belongs_to :user
+end

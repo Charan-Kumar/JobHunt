@@ -1,0 +1,62 @@
+
+<%= form_for(@basic_profile) do |f| %>
+  <% if @basic_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@basic_profile.errors.count, "error") %> prohibited this basic_profile from being saved:</h2>
+
+      <ul>
+      <% @basic_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :maiden_name %><br>
+    <%= f.text_field :maiden_name %>
+  </div>
+  <div class="field">
+    <%= f.label :formatted_name %><br>
+    <%= f.text_field :formatted_name %>
+  </div>
+  <div class="field">
+    <%= f.label :headline %><br>
+    <%= f.text_field :headline %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :industry %><br>
+    <%= f.text_field :industry %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %><br>
+    <%= f.text_field :summary %>
+  </div>
+  <div class="field">
+    <%= f.label :specialties %><br>
+    <%= f.text_field :specialties %>
+  </div>
+  <div class="field">
+    <%= f.label :picture_url %><br>
+    <%= f.text_field :picture_url %>
+  </div>
+  <div class="field">
+    <%= f.label :public_profile_url %><br>
+    <%= f.text_field :public_profile_url %>
+  </div>
+  
+<center>
+<%= f.submit class: 'btn btn-default'%></center>
+<% end %>

@@ -1,0 +1,29 @@
+<%= form_for(@fav_job) do |f| %>
+  <% if @fav_job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fav_job.errors.count, "error") %> prohibited this fav_job from being saved:</h2>
+
+      <ul>
+      <% @fav_job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :job_key %><br>
+    <%= f.text_field :job_key %>
+  </div>
+  <div class="field">
+    <%= f.label :is_fav %><br>
+    <%= f.text_field :is_fav %>
+  </div>
+  <div class="field">
+    <%= f.label :boolean %><br>
+    <%= f.text_field :boolean %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

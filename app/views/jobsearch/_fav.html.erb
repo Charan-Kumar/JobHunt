@@ -1,0 +1,10 @@
+<div id="fav_jobs">
+  <% for i in 0..@jobs.length-1 %>
+    <div class="fav_job">
+      <p  id=<%= @jobs[i][0].job_key%> is_fav="true" class = "favorited star" db_id=<%=@jobs[i][1]%> ></p>
+      <p><b><%= link_to @jobs[i][0].job_title, @jobs[i][0].url%></b></p>
+      <p><%= @jobs[i][0].company%>, <%= @jobs[i][0].formatted_location%></p>
+      <p><%= @jobs[i][0].snippet%></p>
+    </div>
+<% end %>
+</div>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Job key:</strong>
+  <%= @fav_job.job_key %>
+</p>
+
+<p>
+  <strong>Is fav:</strong>
+  <%= @fav_job.is_fav %>
+</p>
+
+<p>
+  <strong>Boolean:</strong>
+  <%= @fav_job.boolean %>
+</p>
+
+<%= link_to 'Edit', edit_fav_job_path(@fav_job) %> |
+<%= link_to 'Back', fav_jobs_path %>

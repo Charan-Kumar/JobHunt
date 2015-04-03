@@ -1,0 +1,80 @@
+$(document).on('page:load ready',function(){
+  var start=1;
+  
+  $(window).data('ajaxready', true).scroll(function() {
+    if ($(window).data('ajaxready') == false) 
+      return;
+    
+    if(window.location.pathname == '/jobsearch/jobs'){
+
+    if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+      start+=25
+      $('.pagination').html('<img src="/assets/ajax_loader.gif" alt="Loading..." title="Loading..." />');
+      $(window).data('ajaxready', false);
+      
+      $.ajax(
+        {
+          url: "/jobsearch/jobs",
+          type: "GET",
+          data:{data:start} ,
+          success: function(response){
+            $(window).data('ajaxready', true);
+          },
+          error: function(){
+            $('.pagination').text('Thats it..!!');
+          }
+        });
+    }
+  }
+  });
+
+  $('p.star, p.favorited ').click(function(){
+      $(this).toggleClass("favorited");
+      var job_key= this.id;
+      current_obj=this;
+      var user = parseInt($(this).attr("user"));
+      if($(this).attr("is_fav") == "false"){
+        $.ajax(
+        {
+          url: "/fav_jobs",
+          type: 'POST',
+          dataType: 'json',
+          data: $.param({ fav_job: {job_key: job_key, is_fav: true, user_id: user }}),
+          success:function(response){
+            set_db_id(current_obj,response.id);
+            console.log("Created in DB");
+          },
+          error: function(){
+            console.log("Already Existed");
+          }
+
+        })
+      }
+      else{
+        $(current_obj).attr('is_fav',false);
+        var db_id = $(current_obj).attr('db_id');
+        var update_url = '/fav_jobs/'+ db_id; 
+        $.ajax({
+          type: 'DELETE',
+          url: update_url,
+          success: function(result){
+            console.log("Deleted..!!");
+            },
+          error:function(e){
+            console.log(e)
+            
+          }
+        });
+
+      }
+
+      function set_db_id(obj,id){
+        $(obj).attr("db_id",id);
+        $(obj).attr("is_fav",true);
+      }
+
+
+  });
+
+});
+

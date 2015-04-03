@@ -1,0 +1,37 @@
+<h1>Listing positions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Summary</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Is current</th>
+      <th>Company</th>
+      <th>Full profile</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @positions.each do |position| %>
+      <tr>
+        <td><%= position.title %></td>
+        <td><%= position.summary %></td>
+        <td><%= position.start_date %></td>
+        <td><%= position.end_date %></td>
+        <td><%= position.is_current %></td>
+        <td><%= position.company %></td>
+        <td><%= position.full_profile_id %></td>
+        <td><%= link_to 'Show', position %></td>
+        <td><%= link_to 'Edit', edit_position_path(position) %></td>
+        <td><%= link_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Position', new_position_path %>
